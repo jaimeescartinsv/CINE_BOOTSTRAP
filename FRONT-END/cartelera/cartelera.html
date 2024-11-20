@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartelera</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cartelera.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index/index.html">
+                <img src="./logo-white.png" alt="Logo" width="100" style="padding: 15px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index/index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cartelera.html">Cartelera</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="precios.html">Precios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item" id="userNav">
+                        <a class="nav-link" href="../user/user.html">
+                            <i class="bi bi-person-circle"></i>
+                            Mi usuario
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Cartelera</h1>
+            <p class="lead">Descubre todas las películas disponibles en nuestras salas</p>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="search-bar position-relative">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="buscarPorTitulo" class="form-control" placeholder="Buscar por título...">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <select id="buscarPorGenero" class="form-select">
+                    <option value="">Buscar por género...</option>
+                    <option value="Acción">Acción</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Ciencia Ficción">Ciencia Ficción</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="contenedorMensaje" class="message"></div>
+
+        <div class="row" id="contenedorPeliculas">
+            <!-- Películas generadas dinámicamente -->
+        </div>
+
+        <nav>
+            <ul class="pagination" id="paginacion">
+                <!-- Botones generados dinámicamente -->
+            </ul>
+        </nav>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Muelmo Cines. Todos los derechos reservados.</p>
+            <ul class="list-unstyled d-flex justify-content-center">
+                <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+                <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
+                <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./cartelera.js"></script>
+    <script src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

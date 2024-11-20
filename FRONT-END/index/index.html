@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index/index.html">
+                <img src="./logo-white.png" alt="Logo" width="100" style="padding: 15px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../cartelera/cartelera.html">Cartelera</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Precios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item" id="userNav">
+                        <a class="nav-link" href="../user/user.html">
+                            <i class="bi bi-person-circle"></i>
+                            Mi usuario
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Bienvenido a Muelmo Cines</h1>
+            <p class="lead">Cine que emociona, conecta y transforma</p>
+            <a href="../cartelera/cartelera.html" class="btn btn-primary btn-lg">Ver Cartelera</a>
+        </div>
+    </div>
+
+    <div id="featuredMoviesCarousel" class="carousel slide py-5" data-bs-ride="carousel">
+        <div class="container">
+            <h2 class="text-center mb-4">Películas Destacadas</h2>
+            <div class="carousel-inner" id="carouselContent">
+                <!-- Contenido generado dinámicamente -->
+            </div>
+            <div class="carousel-controls">
+                <span class="carousel-control-prev-icon" data-bs-target="#featuredMoviesCarousel" data-bs-slide="prev"
+                    role="button" aria-hidden="true"></span>
+                <span class="carousel-control-next-icon ms-3" data-bs-target="#featuredMoviesCarousel"
+                    data-bs-slide="next" role="button" aria-hidden="true"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5" id="cineSalas">
+        <h2 class="text-center mb-4">Nuestras Salas</h2>
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="https://www.cinesa.es/media/t0ufh3g5/sala-premium-isense-cinesa.jpg" alt="Sala estándar"
+                    class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>Sala ISENSE</h3>
+                <p>
+                    Nuestras salas exclusivas ISENSE te harán sentir parte de la película con su sonido Dolby Atmos® y
+                    pantallas impresionantemente reales. Vive un cine mucho más inmersivo en Muelmo Cines.
+                </p>
+                <ul>
+                    <li>Sonido envolvente</li>
+                    <li>Pantalla extragrande</li>
+                    <li>Proyector Full HD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6 order-md-2">
+                <img src="https://www.cinesa.es/media/hozfkyqf/conoce-sala-imax-en-cinesa.jpg" alt="Sala premium"
+                    class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h3>Sala IMAX®</h3>
+                <p>
+                    Vive The IMAX Experience® en nuestras salas y disfruta de las mejores versiones de las películas
+                    gracias a sus imágenes únicas, diseño exclusivo y sonido definitivo.
+
+                    IMAX® te llevará a algo tan cercano a la realidad como jamás hayas experimentado.
+                </p>
+                <ul>
+                    <li>Imágenes únicas</li>
+                    <li>Diseño exclusivo</li>
+                    <li>Sonido definitivo</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://www.cinesa.es/media/vetbkgfh/cinesa-sala-screenx.jpg" alt="Sala 3D/IMAX"
+                    class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>Sala SCREEN X</h3>
+                <p>
+                    ScreenX es la primera plataforma cinematográfica multi proyección del mundo, que te brindará una
+                    experiencia de visualización de 270 grados al expandir la pantalla central a las paredes laterales
+                    del auditorio.
+                </p>
+                <ul>
+                    <li>Expansión panorámica y narrativa en 270 grados.</li>
+                    <li>Tres perspectivas con imágenes envolventes.</li>
+                    <li>Pantalla 2K para vivir una experiencia más inmersiva.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-5" id="aboutMuelmo">
+        <div class="container">
+            <h2 class="text-center mb-4">Acerca de Muelmo Cines</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h3>Nuestra Historia</h3>
+                    <p>
+                        Fundado en 1995, Muelmo Cines ha sido un punto de encuentro para los amantes del cine durante
+                        más
+                        de 25 años. Con una pasión inigualable por ofrecer experiencias cinematográficas inolvidables,
+                        hemos
+                        crecido hasta convertirnos en uno de los cines favoritos de la comunidad.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://img.freepik.com/foto-gratis/joven-pareja-feliz-teniendo-cita-cine_7502-8360.jpg"
+                        alt="Historia de Muelmo Cines" class="img-fluid rounded">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <h3>Nuestra Misión y Valores</h3>
+                    <p>
+                        En Muelmo Cines, nuestra misión es simple: ofrecer a nuestros clientes una experiencia
+                        cinematográfica
+                        inolvidable.
+                    </p>
+                    <ul>
+                        <li><strong>Innovación:</strong> Constantemente actualizamos nuestras instalaciones para ofrecer
+                            la mejor tecnología en sonido e imagen.</li>
+                        <li><strong>Comunidad:</strong> Nos enorgullecemos de ser parte de la comunidad local y apoyarla
+                            en cada paso.</li>
+                        <li><strong>Pasión:</strong> Creemos en el poder del cine para inspirar, entretener y conectar a
+                            las personas.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <img src="https://www.cinesa.es/media/cx2nii2i/we-make-movies-better-cinesa.jpg?width=1900&height=780&v=1d8e7c476594dc0"
+                        alt="Misión y Valores" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Suscríbete a nuestro boletín</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <input type="email" class="form-control mb-3" placeholder="Tu correo electrónico">
+                        <button type="submit" class="btn btn-primary">Suscribirme</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Muelmo Cines. Todos los derechos reservados.</p>
+            <ul class="list-unstyled d-flex justify-content-center">
+                <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+                <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
+                <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+    <script src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
