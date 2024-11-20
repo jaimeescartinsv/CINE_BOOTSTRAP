@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jemja\\Documents\\GitHub\\2DAW_2425_1EV_RETO_BACK\\BACK-END.csproj": {}
+    "C:\\Users\\jemja\\Documents\\GitHub\\CINE_BOOTSTRAP\\BACK-END\\BACK-END.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jemja\\Documents\\GitHub\\2DAW_2425_1EV_RETO_BACK\\BACK-END.csproj": {
+    "C:\\Users\\jemja\\Documents\\GitHub\\CINE_BOOTSTRAP\\BACK-END\\BACK-END.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jemja\\Documents\\GitHub\\2DAW_2425_1EV_RETO_BACK\\BACK-END.csproj",
+        "projectUniqueName": "C:\\Users\\jemja\\Documents\\GitHub\\CINE_BOOTSTRAP\\BACK-END\\BACK-END.csproj",
         "projectName": "BACK-END",
-        "projectPath": "C:\\Users\\jemja\\Documents\\GitHub\\2DAW_2425_1EV_RETO_BACK\\BACK-END.csproj",
+        "projectPath": "C:\\Users\\jemja\\Documents\\GitHub\\CINE_BOOTSTRAP\\BACK-END\\BACK-END.csproj",
         "packagesPath": "C:\\Users\\jemja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jemja\\Documents\\GitHub\\2DAW_2425_1EV_RETO_BACK\\obj\\",
+        "outputPath": "C:\\Users\\jemja\\Documents\\GitHub\\CINE_BOOTSTRAP\\BACK-END\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jemja\\AppData\\Roaming\\NuGet\\NuGet.Config"
