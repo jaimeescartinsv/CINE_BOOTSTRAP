@@ -1,3 +1,0 @@
-.vscode
-BACK-END/obj
-BACK-END/bin
