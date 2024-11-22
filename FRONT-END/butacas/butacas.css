@@ -24,9 +24,23 @@ body {
 .seat {
     width: 30px;
     height: 30px;
-    text-align: center;
-    font-size: 12px;
     line-height: 30px;
+}
+
+.seat-selection {
+    transform-origin: center top; /* Escalar desde el centro */
+}
+
+.seat-selection .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pasillo-horizontal {
+    background-color: transparent;
+    width: 100%;
+    height: 15px;
 }
 
 .btn-outline-secondary {
@@ -43,5 +57,13 @@ body {
 @media (max-width: 768px) {
     .screen {
         max-width: 90%; /* Más ancho en dispositivos móviles */
+    }
+
+    .seat-selection {
+        transform: scale(0.6); /* Escala el contenedor al 80% en pantallas pequeñas */
+    }
+
+    .seat-selection .row {
+        max-width: 100%; /* Ajusta el ancho al tamaño de la pantalla */
     }
 }

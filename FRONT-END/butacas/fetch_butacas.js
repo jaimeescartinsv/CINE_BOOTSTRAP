@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (pasillosHorizontales.includes(row)) {
                     const pasillo = document.createElement('div');
                     pasillo.classList.add('pasillo-horizontal');
-                    pasillo.style.height = "15px";
                     rowContainer.appendChild(pasillo);
                     continue;
                 }
@@ -70,8 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Espacio para pasillos verticales
                 if (pasillosVerticales.includes(col)) {
                     const pasillo = document.createElement('div');
-                    pasillo.style.width = "15px"; // Ancho del pasillo
-                    pasillo.style.height = "30px";
+                    pasillo.style.width = "20px"; // Ancho del pasillo
                     rowContainer.appendChild(pasillo);
                     continue;
                 }
