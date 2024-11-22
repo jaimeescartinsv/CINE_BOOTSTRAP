@@ -68,22 +68,30 @@ public class SesionesController : ControllerBase
         return Ok(sesiones);
     }
 
-    // Obtener sesiones por cineId y por peliculaId
     [HttpGet("cine/{cineId}/pelicula/{peliculaId}")]
-    public ActionResult<IEnumerable<Sesion>> GetSesionesByCineYPelicula(int cineId, int peliculaId)
+    public ActionResult GetSesionesByCineYPelicula(int cineId, int peliculaId)
     {
-        var sesiones = DatosCines.Cines
+        var cine = DatosCines.Cines
             .Where(c => c.CineId == cineId)
-            .SelectMany(c => c.Salas)
-            .SelectMany(s => s.Sesiones)
-            .Where(f => f.PeliculaId == peliculaId)
-            .ToList();
+            .Select(c => new
+            {
+                c.Nombre,
+                Sesiones = c.Salas
+                    .SelectMany(s => s.Sesiones)
+                    .Where(s => s.PeliculaId == peliculaId)
+                    .ToList()
+            })
+            .FirstOrDefault();
 
-        if (!sesiones.Any())
+        if (cine == null || !cine.Sesiones.Any())
         {
             return NotFound($"No se encontraron sesiones para la película con ID {peliculaId} en el cine con ID {cineId}.");
         }
 
-        return Ok(sesiones);
+        return Ok(new
+        {
+            Nombre = cine.Nombre,
+            Sesiones = cine.Sesiones
+        });
     }
 }
