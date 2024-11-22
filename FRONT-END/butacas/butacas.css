@@ -28,7 +28,7 @@ body {
 }
 
 .seat-selection {
-    transform-origin: center top; /* Escalar desde el centro */
+    transform-origin: center top;
 }
 
 .seat-selection .row {
@@ -56,14 +56,14 @@ body {
 
 @media (max-width: 768px) {
     .screen {
-        max-width: 90%; /* Más ancho en dispositivos móviles */
+        max-width: 90%;
     }
 
     .seat-selection {
-        transform: scale(0.6); /* Escala el contenedor al 80% en pantallas pequeñas */
+        transform: scale(0.6);
     }
 
     .seat-selection .row {
-        max-width: 100%; /* Ajusta el ancho al tamaño de la pantalla */
+        max-width: 100%;
     }
 }
