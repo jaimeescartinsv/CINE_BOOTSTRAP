@@ -45,18 +45,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderButacas(sesion) {
         const butacasContainer = document.querySelector('.seat-selection .row');
         butacasContainer.innerHTML = ""; // Limpiar el contenedor
-
-        const rows = 15; // Número de filas
+    
+        const rows = 9; // Número de filas
         const cols = 15; // Número de columnas
         const pasillosVerticales = [4, 11]; // Columnas de los pasillos verticales
         const pasillosHorizontales = [5, 10]; // Filas de los pasillos horizontales
-
+    
         let butacaIndex = 0; // Índice de la butaca
-
+    
         for (let row = 0; row < rows; row++) {
             const rowContainer = document.createElement('div');
             rowContainer.classList.add('d-flex', 'justify-content-center', 'mb-2');
-
+    
             for (let col = 0; col < cols; col++) {
                 // Espacio para pasillos horizontales
                 if (pasillosHorizontales.includes(row)) {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     rowContainer.appendChild(pasillo);
                     continue;
                 }
-
+    
                 // Espacio para pasillos verticales
                 if (pasillosVerticales.includes(col)) {
                     const pasillo = document.createElement('div');
@@ -75,16 +75,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     rowContainer.appendChild(pasillo);
                     continue;
                 }
-
+    
                 // Crear butaca
                 const butaca = sesion.butacas[butacaIndex];
                 if (!butaca) continue;
-
+    
                 const button = document.createElement('button');
                 button.classList.add('seat', 'btn', 'm-1');
-                button.textContent = `B${butaca.butacaId}`;
-                button.dataset.butacaId = butaca.butacaId;
-
+                // Asignar identificador único
+                button.dataset.butacaId = butaca.butacaId; // ID único
+                button.dataset.seat = `B${butaca.butacaId}`; // Número de la butaca
+    
                 // Estilo según el estado de la butaca
                 if (butaca.estado === "Disponible") {
                     button.classList.add('btn-outline-secondary');
@@ -92,39 +93,45 @@ document.addEventListener("DOMContentLoaded", function () {
                     button.classList.add('btn-danger');
                     button.disabled = true;
                 }
-
+    
                 rowContainer.appendChild(button);
-                butacaIndex++;
+                butacaIndex++; // Incrementar el índice solo para las butacas válidas
             }
-
+    
             butacasContainer.appendChild(rowContainer);
         }
-
+    
         // Añadir funcionalidad de selección
         handleSeatSelection();
-    }
+    }    
 
     // Función para manejar la selección de butacas
     function handleSeatSelection() {
         const selectedSeatsText = document.getElementById('selectedSeats');
         const seats = document.querySelectorAll('.seat');
-
+    
         seats.forEach(seat => {
             seat.addEventListener('click', () => {
+                // Cambiar clases para reflejar selección/deselección
                 seat.classList.toggle('btn-success'); // Cambia el estado de selección
                 seat.classList.toggle('btn-outline-secondary');
+        
+                // Obtener el número de la butaca
+                const seatNumber = seat.dataset.seat; // Usamos `data-seat`
+                console.log(`Butaca seleccionada: ${seatNumber}`);
+        
                 updateSelectedSeats();
             });
         });
-
+        
         function updateSelectedSeats() {
             const selectedSeats = Array.from(seats)
                 .filter(seat => seat.classList.contains('btn-success'))
-                .map(seat => seat.textContent);
+                .map(seat => seat.dataset.seat); // Usamos `data-seat` para obtener el número de la butaca
             selectedSeatsText.textContent = `Butacas seleccionadas: ${selectedSeats.length ? selectedSeats.join(', ') : 'Ninguna'}`;
         }
     }
-
+    
     // Obtener los IDs de película y sesión desde localStorage
     const selectedPeliculaId = localStorage.getItem('selectedPeliculaId');
     const selectedSesionId = localStorage.getItem('selectedSesionId');
