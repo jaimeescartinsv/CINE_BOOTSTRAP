@@ -1,0 +1,8 @@
+body {
+    font-family: 'Poller One', sans-serif;
+}
+
+.movie-banner img {
+    object-fit: cover;
+    height: 300px;
+}

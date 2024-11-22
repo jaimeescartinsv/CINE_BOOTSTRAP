@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div>
                         <h5 class="mb-0 cine-nombre">${cineNombre}</h5>
                         <h5 class="mb-0">Hora: ${new Date(sesion.horaDeInicio).toLocaleTimeString("es-ES", {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                        })}</h5>
+                    hour: "2-digit",
+                    minute: "2-digit",
+                })}</h5>
                         <h5 class="mb-0">Sala: ${sesion.salaId}</h5>
                     </div>
                     <div>
@@ -123,6 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para redirigir a la compra de entradas
     window.comprarEntradas = function (sesionId) {
         console.log(`Redirigiendo a la compra de entradas para la sesión ID: ${sesionId}`);
-        //window.location.href = ``;
+
+        // Guardar el ID de la sesión seleccionada en el localStorage
+        localStorage.setItem("selectedSesionId", sesionId);
+
+        // Redirigir al HTML de selección de butacas
+        window.location.href = "../butacas/butacas.html";
     };
 });
