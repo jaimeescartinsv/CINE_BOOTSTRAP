@@ -17,9 +17,9 @@ public static class DatosCines
                     Sesiones = new List<Sesion>
                     {
                         new Sesion { SesionId = 1, SalaId = 1, PeliculaId = 1, FechaDeSesion = new DateTime(2024, 12, 1), HoraDeInicio = new DateTime(2024, 12, 1, 16, 0, 0), Butacas = Enumerable.Range(1, 150).Select(id => new Butaca { ButacaId = id, SalaId = 1, Estado = "Disponible" }).ToList() },
-                        new Sesion { SesionId = 2, SalaId = 1, PeliculaId = 2, FechaDeSesion = new DateTime(2024, 12, 1), HoraDeInicio = new DateTime(2024, 12, 1, 18, 30, 0), Butacas = Enumerable.Range(1, 100).Select(id => new Butaca { ButacaId = id, SalaId = 1, Estado = "Disponible" }).ToList() },
-                        new Sesion { SesionId = 3, SalaId = 1, PeliculaId = 3, FechaDeSesion = new DateTime(2024, 12, 1), HoraDeInicio = new DateTime(2024, 12, 1, 21, 0, 0), Butacas = Enumerable.Range(1, 100).Select(id => new Butaca { ButacaId = id, SalaId = 1, Estado = "Disponible" }).ToList() },
-                        new Sesion { SesionId = 4, SalaId = 1, PeliculaId = 4, FechaDeSesion = new DateTime(2024, 12, 2), HoraDeInicio = new DateTime(2024, 12, 2, 16, 0, 0), Butacas = Enumerable.Range(1, 100).Select(id => new Butaca { ButacaId = id, SalaId = 1, Estado = "Disponible" }).ToList() }
+                        new Sesion { SesionId = 2, SalaId = 1, PeliculaId = 2, FechaDeSesion = new DateTime(2024, 12, 1), HoraDeInicio = new DateTime(2024, 12, 1, 18, 30, 0), Butacas = Enumerable.Range(1, 150).Select(id => new Butaca { ButacaId = id, SalaId = 1, Estado = "Disponible" }).ToList() },
+                        new Sesion { SesionId = 3, SalaId = 1, PeliculaId = 3, FechaDeSesion = new DateTime(2024, 12, 1), HoraDeInicio = new DateTime(2024, 12, 1, 21, 0, 0), Butacas = Enumerable.Range(1, 150).Select(id => new Butaca { ButacaId = id, SalaId = 1, Estado = "Disponible" }).ToList() },
+                        new Sesion { SesionId = 4, SalaId = 1, PeliculaId = 4, FechaDeSesion = new DateTime(2024, 12, 2), HoraDeInicio = new DateTime(2024, 12, 2, 16, 0, 0), Butacas = Enumerable.Range(1, 150).Select(id => new Butaca { ButacaId = id, SalaId = 1, Estado = "Disponible" }).ToList() }
                     }
                 },
                 new Sala
