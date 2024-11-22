@@ -41,6 +41,90 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionDetailsElement.textContent = `Sala: ${sesion.salaId} | Fecha: ${formattedDate} | Hora: ${formattedTime}`;
     }
 
+    // Renderizar las butacas con diseño personalizado
+    function renderButacas(sesion) {
+        const butacasContainer = document.querySelector('.seat-selection .row');
+        butacasContainer.innerHTML = ""; // Limpiar el contenedor
+
+        const rows = 15; // Número de filas
+        const cols = 15; // Número de columnas
+        const pasillosVerticales = [4, 11]; // Columnas de los pasillos verticales
+        const pasillosHorizontales = [5, 10]; // Filas de los pasillos horizontales
+
+        let butacaIndex = 0; // Índice de la butaca
+
+        for (let row = 0; row < rows; row++) {
+            const rowContainer = document.createElement('div');
+            rowContainer.classList.add('d-flex', 'justify-content-center', 'mb-2');
+
+            for (let col = 0; col < cols; col++) {
+                // Espacio para pasillos horizontales
+                if (pasillosHorizontales.includes(row)) {
+                    const pasillo = document.createElement('div');
+                    pasillo.classList.add('pasillo-horizontal');
+                    pasillo.style.height = "15px";
+                    rowContainer.appendChild(pasillo);
+                    continue;
+                }
+
+                // Espacio para pasillos verticales
+                if (pasillosVerticales.includes(col)) {
+                    const pasillo = document.createElement('div');
+                    pasillo.style.width = "15px"; // Ancho del pasillo
+                    pasillo.style.height = "30px";
+                    rowContainer.appendChild(pasillo);
+                    continue;
+                }
+
+                // Crear butaca
+                const butaca = sesion.butacas[butacaIndex];
+                if (!butaca) continue;
+
+                const button = document.createElement('button');
+                button.classList.add('seat', 'btn', 'm-1');
+                button.textContent = `B${butaca.butacaId}`;
+                button.dataset.butacaId = butaca.butacaId;
+
+                // Estilo según el estado de la butaca
+                if (butaca.estado === "Disponible") {
+                    button.classList.add('btn-outline-secondary');
+                } else {
+                    button.classList.add('btn-danger');
+                    button.disabled = true;
+                }
+
+                rowContainer.appendChild(button);
+                butacaIndex++;
+            }
+
+            butacasContainer.appendChild(rowContainer);
+        }
+
+        // Añadir funcionalidad de selección
+        handleSeatSelection();
+    }
+
+    // Función para manejar la selección de butacas
+    function handleSeatSelection() {
+        const selectedSeatsText = document.getElementById('selectedSeats');
+        const seats = document.querySelectorAll('.seat');
+
+        seats.forEach(seat => {
+            seat.addEventListener('click', () => {
+                seat.classList.toggle('btn-success'); // Cambia el estado de selección
+                seat.classList.toggle('btn-outline-secondary');
+                updateSelectedSeats();
+            });
+        });
+
+        function updateSelectedSeats() {
+            const selectedSeats = Array.from(seats)
+                .filter(seat => seat.classList.contains('btn-success'))
+                .map(seat => seat.textContent);
+            selectedSeatsText.textContent = `Butacas seleccionadas: ${selectedSeats.length ? selectedSeats.join(', ') : 'Ninguna'}`;
+        }
+    }
+
     // Obtener los IDs de película y sesión desde localStorage
     const selectedPeliculaId = localStorage.getItem('selectedPeliculaId');
     const selectedSesionId = localStorage.getItem('selectedSesionId');
@@ -68,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(sesion => {
             console.log("Datos de la sesión:", sesion);
             renderSesionDetails(sesion); // Renderizar detalles de la sesión
+            renderButacas(sesion); // Renderizar las butacas
         })
         .catch(error => {
             console.error("Error al cargar los datos de la sesión:", error);
