@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Renderizar los detalles
-        sessionDetailsElement.textContent = `Sala: ${sesion.salaId} | Fecha: ${formattedDate} | Hora: ${formattedTime}`;
+        sessionDetailsElement.textContent = `Fecha: ${formattedDate} | Sala: ${sesion.salaId} | Hora: ${formattedTime}`;
     }
 
     // Renderizar las butacas con diseño personalizado

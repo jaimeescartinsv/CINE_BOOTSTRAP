@@ -2,6 +2,10 @@ body {
     font-family: 'Poller One', sans-serif;
 }
 
+.screen {
+    margin-bottom: 5rem !important;
+}
+
 .movie-banner img {
     object-fit: cover;
     height: 300px;
