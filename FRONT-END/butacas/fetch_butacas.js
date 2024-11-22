@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const butacasContainer = document.querySelector('.seat-selection .row');
         butacasContainer.innerHTML = ""; // Limpiar el contenedor
     
-        const rows = 9; // Número de filas
-        const cols = 15; // Número de columnas
-        const pasillosVerticales = [4, 11]; // Columnas de los pasillos verticales
+        const rows = 12; // Número de filas
+        const cols = 17; // Número de columnas
+        const pasillosVerticales = [5, 11]; // Columnas de los pasillos verticales
         const pasillosHorizontales = [5, 10]; // Filas de los pasillos horizontales
     
         let butacaIndex = 0; // Índice de la butaca
